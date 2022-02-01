@@ -10,10 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_01_193547) do
+ActiveRecord::Schema.define(version: 2022_02_01_203546) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "meme_creator_listings_id", null: false
+    t.string "status"
+    t.string "date_booked"
+    t.string "hours_booked"
+    t.string "total_price"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["meme_creator_listings_id"], name: "index_bookings_on_meme_creator_listings_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "meme_creator_listings", force: :cascade do |t|
+    t.string "creator_name"
+    t.string "speciality"
+    t.string "description"
+    t.integer "hourly_price"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_meme_creator_listings_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +51,6 @@ ActiveRecord::Schema.define(version: 2022_02_01_193547) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "meme_creator_listings", column: "meme_creator_listings_id"
+  add_foreign_key "bookings", "users"
 end

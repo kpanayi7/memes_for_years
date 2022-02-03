@@ -1,0 +1,186 @@
+.cards-container {
+  width: 100%;
+  height: auto;
+  flex-wrap: wrap;
+  display: flex;
+  padding: 24px 20px;
+  justify-content: space-around;
+  z-index: 9;
+}
+
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.589);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.774);
+  transition: all .2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+}
+
+.card-product {
+  flex-shrink: 0;
+  position: relative;
+  margin-top: 20px;
+  margin: 40px;
+  overflow: hidden;
+  height: 350px;
+  width: 400px;
+  background: rgb(235, 235, 235);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.438);
+  display: flex;
+  align-items: center;
+  transition: all .2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+}
+
+.card-product img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.card-product .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.card-product h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+}
+
+.card-product .card-del {
+  color: rgb(29, 29, 29);
+  background-color: rgb(243, 85, 85);
+  text-align: center;
+  vertical-align: middle;
+  line-height: 15px;
+
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+
+}
+
+.card-links {
+  text-decoration: none;
+  color: rgb(24, 24, 24);
+
+  &:hover {
+    color: rgb(24, 24, 24);
+    text-decoration: none;
+  }
+}
+
+.cards-container-my-powers {
+  display: flex;
+  width: 100%;
+  height: 450px;
+  border-top: 1px solid grey;
+  overflow-x: scroll;
+  // flex-wrap: wrap;
+  flex-shrink: 0;
+
+  padding: 24px 0px;
+  // justify-content: space-around;
+}
+
+.green {
+  background-color: rgb(159, 199, 126);
+}
+
+.red {
+  background-color: rgba(226, 126, 101, 0.87);
+}
+
+.trip-detail h2, p, h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.trip-detail {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 24px;
+  align-items: end;
+}
+
+.trip-img {
+  width: 100%;
+  height: 270px;
+  object-fit: cover;
+}
+
+.avatar-trip-card {
+  position: absolute;
+  left: 350px;
+  top: 250px;
+  border: 2px solid white;
+  box-shadow: 2px 2px 3px rgb(0, 0, 0,);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+
+}
+
+.card-trip {
+  margin: 20px;
+  box-shadow: 0px 0px 8px #525252;
+  width: 450px;
+  position: relative;
+  transition: all .2s ease-in-out;
+  &:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+}
+
+.avatar-review-card {
+  border: 2px solid white;
+  box-shadow: 2px 2px 3px rgb(0, 0, 0,);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+
+}

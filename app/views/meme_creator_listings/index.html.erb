@@ -1,0 +1,48 @@
+<%= javascript_pack_tag 'banner_nav' %>
+
+<div class="sticky-banner">
+  <div class="main-banner" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('<%= image_path "funny cat.jpg"%>')">
+    <h1 data-aos="fade-right">Meme Creator</h1>
+    <h3 data-aos="fade-right">Memes for days, Memes for years...Let's get Memey<h3>
+    <div class="meme_creator_listing-search" data-aos="fade-left">
+      <div id="form-field">
+        <%= form_tag meme_creator_listing_index_path, id: "my-form", method: :get do %>
+          <%= text_field_tag :query,
+            params[:query],
+            id: "form-field",
+            placeholder: "Search for your Meme Creator Listing!", class: "search-form-input"
+          %>
+          <%= submit_tag "Search", class: "btn btn-danger" %>
+        <% end %>
+      </div>
+    </div>
+</div>
+</div>
+<div class="container index-container">
+
+  <div class="cards-container">
+      <% @meme_creator_listings.each do |meme_creator_listing| %>
+        <%= link_to meme_creator_listing_path(meme_creator_listing), class: "card-links" do %>
+          <div data-aos="flip-left">
+            <div class="card-trip" >
+              <%= cl_image_tag meme_creator_listing.photo.key, class: 'trip-img' %>
+              <div class="trip-detail">
+                <% if meme_creator_listing.user.photo.attached? %>
+                  <%= cl_image_tag meme_creator_listing.user.photo.key, class: 'avatar avatar-trip-card' %>
+                <% end %>
+                <div>
+                    <h2><%= meme_creator_listing.name.capitalize %></h2>
+                    <p><%= meme_creator_listing.description[0..30].gsub(/\s\w+\s*$/, '...') %></p>
+                    <p><i>Listed by - <%= meme_creator_listing.user.first_name  %> <%= meme_creator_listing.user.last_name  %> </i></p>
+                </div>
+                <div>
+                  <p class='m-3'><strong>Price: £<%= meme_creator_listing.price %>/day</strong></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+
+  </div>
+</div>

@@ -1,0 +1,76 @@
+<div class="container d-flex justify-content-between">
+
+  <div class="internal">
+    <div class="cover">
+      <div class="book">
+        <label for="page-1"  class="book__page book__page--1">
+          <%= cl_image_tag @meme_creator_listing.photo.key, class: 'book-image' %>
+        </label>
+
+        <label for="page-2" class="book__page book__page--4">
+          <%= cl_image_tag @meme_creator_listing.photo.key, class: 'book-image' %>
+        </label>
+
+
+        <!-- Resets the page -->
+        <input type="radio" name="page" id="page-1"/>
+
+        <!-- Goes to the second page -->
+        <input type="radio" name="page" id="page-2"/>
+        <label class="book__page book__page--2">
+          <div class="book__page-front book-text">
+            <div class="meme_creator_listing-info">
+              <div class="details-div meme_creator_listing-title">
+                <h1 class="p-4 book-text m-auto"><%= @meme_creator_listing.name.capitalize %></h1>
+              </div>
+              <div class="details-div">
+                <p class="p-3"><%= @meme_creator_listing.description %></p>
+              </div>
+              <div class="details-div">
+                <p class="p-3">meme_creator_listing Type: <%= @meme_creator_listing.meme_creator_listing_type %></p>
+                <p class="p-3">Element: <%= @meme_creator_listing.element %></p>
+              </div>
+              <div class="details-div">
+                <p class="p-3">Location: <%= @meme_creator_listing.location %></p>
+
+                <p class="p-3">£<%= @meme_creator_listing.price %> /day</p>
+              </div>
+              <div class="details-div">
+                Click for reviews
+              </div>
+            </div>
+          </div>
+
+          <div class="book__page-back d-flex flex-column book-text w-100">
+            <div class="w-100 details-div">
+              <h2 class="border-bottom book-text">User Reviews:</h2>
+            </div>
+            <% @meme_creator_listing.reviews.each do |review|  %>
+              <div class="w-100 details-div">
+                <p class="w-100 border-top border-bottom"><i>"<%= review.content%>"</i> - <%= review.user.first_name %> <%= cl_image_tag review.user.photo.key, class: 'avatar m-3' %> </p>
+              </div>
+            <% end %>
+
+          </div>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <% if current_user != @meme_creator_listing.user && user_signed_in?%>
+      <div class="book-form">
+        <h3>Book this meme_creator_listing!</h3>
+        <%= simple_form_for [@meme_creator_listing, @booking] do |f| %>
+          <%= f.input :start_date, as: :date, html5: true %>
+          <%= f.input :end_date, as: :date, html5: true %>
+          <%= f.submit "Request Booking", class: "btn btn-success w-100 booking-button" %>
+        <% end %>
+      </div>
+      <% elsif !user_signed_in? %>
+    <div class='d-flex'>
+        <%= link_to "Please log in to book meme_creator_listing", new_user_registration_path(@meme_creator_listing), class: "btn btn-danger book-login" %>
+    </div>
+    <% end %>
+  </div>
+</div>

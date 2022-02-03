@@ -1,0 +1,69 @@
+<div class="container py-3">
+<h2>Booking Requests:</h2>
+
+  <div class="cards-container-my-meme_creator_listings">
+    <% if @active_bookings.empty? %>
+      <h2 class="no-requests">You have no requests!</h2>
+    <% end %>
+      <% @active_bookings.each do |booking| %>
+      <% if booking.status == "accepted"  %>
+        <% @color = "green" %>
+      <% elsif booking.status == "rejected" %>
+            <% @color = "red" %>
+      <% else %>
+            <% @color = "" %>
+      <% end %>
+          <div class="card-product <%= @color %>" data-aos="flip-left"  >
+            <%= cl_image_tag booking.meme_creator_listing.photo.key %>
+            <div class="card-product-infos">
+              <h2> <%= booking.user.first_name %> <%= booking.user.last_name %> wants to rent your <%= booking.meme_creator_listing.name %> meme_creator_listing!</h2>
+              <p><%= booking.meme_creator_listing.description %></p>
+              <p >Location: <%= booking.meme_creator_listing.location.capitalize%></p>
+              <p class="w-100"><strong>Requested by: <%= booking.user.first_name  %> </strong> <%= cl_image_tag booking.user.photo.key, class: 'avatar avatar-review-card ml-1' %></p>
+              <h3> <%= booking.status.capitalize %></h3>
+              <p class='m-3'><strong>Price: £<%= booking.meme_creator_listing.price %>/day</strong></p>
+              <div class="d-flex justify-content-around">
+                <% if booking.status == 'pending' %>
+                  <%= simple_form_for booking do |f| %>
+                    <%= f.hidden_field :status, value: "accepted"  %>
+                    <%= f.submit 'Accept', class: 'btn btn-success' %>
+                  <% end %>
+                  <%= simple_form_for booking do |f| %>
+                    <%= f.hidden_field :status, value: "rejected"  %>
+                    <%= f.submit 'Reject', class: 'btn btn-danger' %>
+                  <% end %>
+                <% elsif booking.status == "rejected" %>
+                <%= link_to "delete", booking_path(booking), method: :delete, class: 'btn btn-danger' %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+    </div>
+
+
+<h2>Your Active meme_creator_listing Listings:</h2>
+  <div class="cards-container-my-meme_creator_listings">
+    <% if @meme_creator_listings.empty? %>
+      <h2 class="no-requests">You have no meme_creator_listings listed!</h2>
+    <% end %>
+    <% @meme_creator_listings.each do |meme_creator_listing| %>
+        <div class="card-product" >
+          <%= cl_image_tag meme_creator_listing.photo.key %>
+          <div class="card-product-infos">
+            <h2><%= meme_creator_listing.name.capitalize %></h2>
+            <p><%= meme_creator_listing.description %></p>
+            <p >Location: <%= meme_creator_listing.location.capitalize%></p>
+            <p class='m-3'><strong>Price: £<%=meme_creator_listing.price %>/day</strong></p>
+            <div class="d-flex">
+              <%= link_to "edit", edit_meme_creator_listing_path(meme_creator_listing), class: "btn btn-danger" %>
+              <%= link_to "delete", meme_creator_listing_path(meme_creator_listing), method: :delete, class: "btn btn-danger ml-2" %>
+            </div>
+
+          </div>
+
+        </div>
+
+    <% end %>
+  </div>
+</div>

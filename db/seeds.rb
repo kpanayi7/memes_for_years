@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 MemeCreatorListing.destroy_all
+User.destroy_all
 
 meme_controller_listings_urls =  ['https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=717&q=80',
                                   'https://images.unsplash.com/photo-1621739165914-7155e5d4816e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
@@ -18,6 +19,10 @@ meme_controller_listings_urls =  ['https://images.unsplash.com/photo-15180203821
                                   'https://images.unsplash.com/photo-1618517048008-1cbdfd7ce2af?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
                                   'https://images.unsplash.com/photo-1534361960057-19889db9621e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80']
 
-10.times do
-  MemeCreatorListing.create(creator_name: Faker::JapaneseMedia::DragonBall.character, photo: meme_controller_listings_urls.sample, description: Faker::JapaneseMedia::DragonBall.race, speciality: Faker::JapaneseMedia::DragonBall.planet, hourly_price: Faker::Number.between(from: 18, to: 50))
-end
+# 10.times do
+#   MemeCreatorListing.create(creator_name: Faker::JapaneseMedia::DragonBall.character, photo: meme_controller_listings_urls.sample, description: Faker::JapaneseMedia::DragonBall.race, speciality: Faker::JapaneseMedia::DragonBall.planet, hourly_price: Faker::Number.between(from: 1, to: 50))
+# end
+
+User.create!(name:"Dave", email:"dave@sidgrove.com", password:"1234567")
+User.create!(name:"Davo", email:"davo@sidgrovee.com", password:"1234567")
+User.create!(name:"Davos", email:"davos@sidgrove.com", password:"1234567")

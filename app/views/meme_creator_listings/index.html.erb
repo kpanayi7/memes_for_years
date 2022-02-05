@@ -2,10 +2,10 @@
   <% @meme_creator_listings.each do |meme_creator_listing| %>
   <%= "This is a future creator" %>
     <div class="card-meme_creator_listing">
-      <%= image_tag meme_creator_listing.photo %>
+      <%# <%= image_tag meme_creator_listing.photo %> %>
       <div class="card-infos">
         <div>
-          <h2><%= meme_creator_listing.name %></h2>
+          <h2><%= meme_creator_listing.creator_name %></h2>
           <p><%= meme_creator_listing.description %></p>
         </div>
         <div class="card-bottom">

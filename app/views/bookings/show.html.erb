@@ -1,0 +1,10 @@
+<h1>Booking</h1>
+<br><br>
+<div class="booking-show-container">
+  <% Date = @booking.date_booked %>
+  <h3>Confirmed:<%= @booking.meme_creator_listing %></h3>
+  <div class="booking-show-status">
+    <p>Booked by <%= @booking.user.name %><%= @booking.created_at.strftime(" on %m/%d/%Y") %></p>
+     <% end %>
+  </div>
+</div>

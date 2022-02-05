@@ -2,7 +2,11 @@
 
 <div class="text-center">
     <% @bookings.each do |booking| %>
-        <%= booking.start_date.strftime('%d-%m-%Y') + " ~~~ " + booking.end_date.strftime('%d-%m-%Y') %>
+            <div>
+            <h2><%= link_to booking.meme_creator_listing.creator_name, meme_creator_listing_booking_path(booking.meme_creator_listing, booking) %></h2>
+        <p>Date: <%= booking.date_booked.strftime('%d-%m-%Y')%></p>
+
       <br><br>
     <% end %>
+</div>
 </div>

@@ -7,21 +7,21 @@ class BookingsController < ApplicationController
   end
 
   def show
+    @booking = Booking.find(params[:id])
   end
 
   def new
-    @booking = Booking.new
-    @meme_creator_listing = MemeCreatorListingsController.find(params[:meme_creator_listing_id])
+    @meme_creator_listing = MemeCreatorListing.find(params[:meme_creator_listing_id])
+     @booking = Booking.new
 
   end
 
   def create
     @booking = Booking.new(booking_params)
-    @meme_creator_listing = MemeCreatorListingsController.find(params[:meme_creator_listing_id])
-    @booking.meme_creator_listing = @meme_creator_listing
+    @booking.meme_creator_listing = MemeCreatorListing.find(params[meme_creator_listing_id])
     @booking.user = current_user
     if @booking.save
-      redirect_to meme_creator_listing_path(@meme_creator_listing)
+      redirect_to booking_path(@booking), notice: "Booking Successful"
     else
       render :new
     end
@@ -34,7 +34,7 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date)
+    params.require(:booking).permit(:date_booked)
   end
 
 end

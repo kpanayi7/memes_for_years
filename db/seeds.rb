@@ -26,3 +26,5 @@ meme_controller_listings_urls =  ['https://images.unsplash.com/photo-15180203821
 User.create!(name:"Dave", email:"dave@sidgrove.com", password:"1234567")
 User.create!(name:"Davo", email:"davo@sidgrovee.com", password:"1234567")
 User.create!(name:"Davos", email:"davos@sidgrove.com", password:"1234567")
+
+Booking.create()

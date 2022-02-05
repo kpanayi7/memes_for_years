@@ -2,9 +2,73 @@
 @import "alert";
 @import "avatar";
 @import "navbar";
-@import "card";
-@import "banner";
-@import "search";
-@import "form";
-@import "nav_search";
-@import "show_card";
+
+// cards
+.card-meme_controller_listing {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 500px;
+  display: inline-block;
+  padding: 50px;
+  margin: 40px;
+  height: 378px;
+}
+.card-meme_controller_listing > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  padding-bottom: 5px;
+}
+.card-meme_controller_listing h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  width: 200;
+}
+.card-meme_controller_listing p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+  width: 200px;
+}
+.card-meme_controller_listing .card-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+.card-infos {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
+.card-bottom {
+  position: absolute;
+  bottom: -40px;
+  width: 200px;
+}
+
+.main-banner {
+  display:flex;
+  float: left;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  position:relative;
+  background-size:cover;
+  background-position:top;
+  text-align: center;
+  width: 50%;
+  height: 600px;
+  color: rgb(255, 255, 255);
+}
+
+// fonts
+h1 {
+  color: #1F3D51;
+}

@@ -19,17 +19,12 @@ ActiveStorage.start()
 // ----------------------------------------------------
 
 // External imports
-import "bootstrap"
-import "controllers"
-import { reviewModalHandler } from './review_modal';
+import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
-  const bookingButton = document.querySelector('.booking-button');
-  bookingButton.addEventListener('click', (e)=> {
-    // e.target.disabled = true;
-    e.target.value = 'Request sent'  })
-  reviewModalHandler();
+  // Call your functions here, e.g:
+  // initSelect2();
 });

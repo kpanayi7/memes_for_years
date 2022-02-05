@@ -1,40 +1,40 @@
 class BookingsController < ApplicationController
 
-  def show
-    @booking = Booking.find(params[:id])
+  before_action :find_booking, only: %i[show]
+
+  def index
+    @bookings = Booking.where(user: current_user)
   end
 
-  def select_meme_creator_listing
+  def show
+  end
+
+  def new
+    @booking = Booking.new
+    @meme_creator_listing = MemeCreatorListingsController.find(params[:meme_creator_listing_id])
+
   end
 
   def create
     @booking = Booking.new(booking_params)
+    @meme_creator_listing = MemeCreatorListingsController.find(params[:meme_creator_listing_id])
+    @booking.meme_creator_listing = @meme_creator_listing
     @booking.user = current_user
-    @booking.meme_creator_listing_id = params[:meme_creator_listing_id]
-    @booking.save
-    redirect_to meme_creator_listing_path(params[:meme_creator_listing_id])
-  end
-
-  def index
-    @bookings = Booking.where(user_id: current_user.id)
-  end
-
-  def update
-    booking = Booking.find(params[:id])
-    booking.status = params[:booking][:status]
-    booking.save
-    redirect_to my_meme_creator_listing_path(current_user)
-  end
-
-  def destroy
-    booking = Booking.find(params[:id])
-    booking.destroy!
-    redirect_to my_meme_creator_listing_path(current_user)
+    if @booking.save
+      redirect_to meme_creator_listing_path(@meme_creator_listing)
+    else
+      render :new
+    end
   end
 
   private
 
-  def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :status)
+  def find_booking
+    @booking = Booking.find(params[:id])
   end
+
+  def booking_params
+    params.require(:booking).permit(:start_date, :end_date)
+  end
+
 end

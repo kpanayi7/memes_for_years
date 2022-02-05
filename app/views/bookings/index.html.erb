@@ -1,49 +1,8 @@
-<div class="container h-100">
+<h1 class="text-center">My Bookings!</h1>
 
-  <h2 class="py-2">My Bookings:</h2>
-
-  <div class="bookings-title d-flex justify-content-center bookings p-3">
-    <% if @booking.empty? %>
-      <h2 class="align-self-center">You have no bookings!<h2>
+<div class="text-center">
+    <% @bookings.each do |booking| %>
+        <%= booking.start_date.strftime('%d-%m-%Y') + " ~~~ " + booking.end_date.strftime('%d-%m-%Y') %>
+      <br><br>
     <% end %>
-      <% @booking.each do |booking| %>
-        <div class="card-product">
-          <% meme_creator_listing = booking.meme_creator_listing %>
-          <%= cl_image_tag booking.meme_creator_listing.photo.key, height: 300, width: 400, crop: :fill %>
-            <div class="card-product-info">
-            <h2 class="ml-4">Status: <%= booking.status.capitalize %></h2>
-            <p class="m-4 p-2"><%= meme_creator_listing.name %></p>
-            <p class="m-4 p-2">Start Date: <%= booking.start_date %></p>
-            <p class="m-4 p-2">End Date: <%= booking.end_date %></p>
-          <p class='m-3'><strong>Price: £<%= meme_creator_listing.price %>/day</strong></p>
-
-          <%= simple_form_for([ meme_creator_listing, @review], html: { class: "form-id-#{meme_creator_listing.id} hidden pt-3" } ) do |f| %>
-          <%= f.input :content,  label: 'What did you think? :' %>
-
-          <div class="col text-center"><%= f.submit "Submit Review", class: "btn btn-primary" %></div>
-          <% end %>
-
-        </div>
-      </div>
-    <% end %>
-  </div>
-</div>
-
-
-
-<!-- Modal -->
-<div class="modal fade pt-4" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content p-4">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Leave a Review!</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-        <div id="render-form-modal-body">
-        </div>
-      </div>
-    </div>
-  </div>
 </div>

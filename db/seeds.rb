@@ -19,6 +19,5 @@ meme_controller_listings_urls =  ['https://images.unsplash.com/photo-15180203821
                                   'https://images.unsplash.com/photo-1534361960057-19889db9621e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80']
 
 10.times do
-  MemeCreatorListing.create(name: Faker::JapaneseMedia::DragonBall.character, photo: meme_controller_listings_urls.sample, description: Faker::JapaneseMedia::DragonBall.race,
-              nationality: Faker::JapaneseMedia::DragonBall.planet, age: Faker::Number.between(from: 18, to: 50))
+  MemeCreatorListing.create(creator_name: Faker::JapaneseMedia::DragonBall.character, photo: meme_controller_listings_urls.sample, description: Faker::JapaneseMedia::DragonBall.race, speciality: Faker::JapaneseMedia::DragonBall.planet, hourly_price: Faker::Number.between(from: 18, to: 50))
 end

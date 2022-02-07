@@ -1,17 +1,13 @@
-<div class="text-center">
-  <% @meme_creator_listings.each do |meme_creator_listing| %>
-  <%= "This is a creator" %>
-    <div class="card-meme_creator_listing">
-      <%# <%= image_tag meme_creator_listing.photo %> %>
-      <div class="card-infos">
-        <div>
-          <h2><%= meme_creator_listing.creator_name %></h2>
-          <p><%= meme_creator_listing.description %></p>
-        </div>
-        <div class="card-bottom">
-          <h2><%= link_to "More info ", meme_creator_listing_path(meme_creator_listing.id) %></h2>
-        </div>
-    </div>
-  </div>
-  <% end %>
+<div class="d-flex flex-column align-items-center" >
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://i2-prod.mirror.co.uk/incoming/article21077892.ece/ALTERNATES/s1200/0_JS201040314.jpg)">
+  Boris Johnson Meme Specialist
 </div>
+<br><br>
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://i.pinimg.com/originals/87/9c/24/879c24563621bdf00e0d7380eb0b777c.jpg)">
+  Cat Meme Specialist
+</div>
+<br><br>
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://i.pinimg.com/originals/ce/ba/ac/cebaac157a02d758a9b1caa98a1bbb13.jpg)">
+  Egg Meme Specialist
+</div>
+<br><br>

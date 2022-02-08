@@ -3,6 +3,7 @@
 @import "config/colors";
 @import "config/bootstrap_variables";
 
+
 // External libraries
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
@@ -11,6 +12,7 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
 
 $navy: #1F3D51;
 $red: #ff0000;
@@ -24,19 +26,25 @@ body {
   background-color: white;
 }
 h1 {
-  font-family: 'Bubblegum Sans', cursive;
+  font-family: 'Roboto', sans-serif;
   font-size: 56px;
 }
 h2, body, p, h3, h4, h5 {
   font-family: 'Roboto', sans-serif;
 }
+
+h3 {
+
+  font-size: 30px;
+}
+
 a {
   text-decoration: none;
-  font-family: 'Bubblegum Sans', cursive;
+  font-family: 'Roboto', sans-serif;
   color: #1F3D51;
     &:hover {
       text-decoration: underline;
-      font-family: 'Bubblegum Sans', cursive;
+      font-family: 'Roboto', sans-serif;
       color: #F7D635;
     }
 }
@@ -53,4 +61,9 @@ a {
   &:hover {
     background-color: $yellow;
   }
+}
+
+
+.home-padding {
+  padding: 10px ;
 }

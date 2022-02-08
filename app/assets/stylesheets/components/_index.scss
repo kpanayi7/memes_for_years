@@ -3,6 +3,10 @@
 @import "avatar";
 @import "navbar";
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 // cards
 .card-meme_controller_listing {
   overflow: hidden;

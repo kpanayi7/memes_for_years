@@ -1,0 +1,49 @@
+@import "tailwindcss/base";
+@import "tailwindcss/utilities";
+@import "tailwindcss/components";
+body {
+  background-color: rgb(243, 243, 243);
+}
+h1 {
+  font-family: 'Roboto', "sans-serif";
+  font-weight: bold;
+  font-size: 56px;
+}
+h2, body, p, h3, h4, h5 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+}
+
+h3 {
+  font-size: 30px;
+  font-weight: bold;
+  color: #27024d;
+
+}
+
+
+a {
+  text-decoration: none;
+  font-family: 'Roboto', cursive;
+  color: #1F3D51;
+    &:hover {
+      text-decoration: underline;
+      font-family: 'Roboto', cursive;
+      color: #F7D635;
+    }
+}
+
+
+// devise forms
+.form-inputs {
+  margin: auto;
+  width: 50%;
+}
+.btn {
+  background-color: $navy;
+  color: white;
+  border-radius: 4px;
+  &:hover {
+    background-color: $yellow;
+  }
+}

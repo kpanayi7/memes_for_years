@@ -27,10 +27,13 @@ $black: #000000;
 .navbar .navbar-brand img {
   width: 40px;
 }
-
-.dropdown-menu {
-  left: -250%;
+@media(min-width:100px){
+  #dropdown-menu-position {
+  // right: 50px !important;
+  background-color: #5fda54;
+  }
 }
+
 
 @media
 (prefers-reduced-motion: no-preference) {

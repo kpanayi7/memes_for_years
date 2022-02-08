@@ -2,10 +2,8 @@
 @import "alert";
 @import "avatar";
 @import "navbar";
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "footer";
+@import "search";
 
 // cards
 .card-meme_controller_listing {

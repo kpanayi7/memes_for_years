@@ -1,6 +1,6 @@
+<div class="container pb-5">
 <h1 class="text-center font-sans subpixel-antialiased font-extrabold black"></h1>
 <div class= "home-padding">
-
 
 </div>
 <div class=" flex flex-col my-auto items-center ">
@@ -10,12 +10,16 @@
 <h3 class ="text-center font-sans subpixel-antialiased"> Memes for days, Memes for years...Let's get Memey!</h3>
 
 <%= simple_form_for :search, url: root_path, method: :get do |f| %>
-  <div class="search-form-control form-group">
-    <input class="form-control string required" type="text" name="search[query]" id="search_query" />
-    <button name="button" type="submit" class="btn btn-flat">
-      <i class="fas fa-search"></i> Search
-    </button>
-  </div>
+
+    <div class="search-form-control form-group col-6 mx-auto mt-5">
+      <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+      <button name="button" type="submit" class="btn btn-flat">
+        <i class="fas fa-search"></i> Search
+      </button>
+    </div>
+
+
 <% end %>
 
+</div>
 </div>

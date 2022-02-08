@@ -28,6 +28,10 @@ $black: #000000;
   width: 40px;
 }
 
+.dropdown-menu {
+  left: -250%;
+}
+
 @media
 (prefers-reduced-motion: no-preference) {
   html {

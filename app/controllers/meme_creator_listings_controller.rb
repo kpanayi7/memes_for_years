@@ -16,7 +16,7 @@ class MemeCreatorListingsController < ApplicationController
   private
 
   def meme_creator_listing_params
-    params.require(:list).permit(:creator_name)
+    params.require(:list).permit(:creator_name, :speciality, :hourly_price, :photo)
   end
 
   def find_meme_creator_listing

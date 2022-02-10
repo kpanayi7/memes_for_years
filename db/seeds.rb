@@ -19,7 +19,7 @@ User.destroy_all
 
 User.create!(name:"Dave", email:"dave@pushflo.com", password:"1234567")
 puts "created user"
-User.create!(name:"Kyri", email:"kyri@pufhflo.com", password:"1234567")
+User.create!(name:"Kyri", email:"kyri@pufhflo.com", password:"7654321")
 puts "created user"
 User.create!(name:"Nelson", email:"nelson@pushflo.com", password:"1234567")
 puts "created user"

@@ -1,6 +1,6 @@
 require "open-uri"
 
-file = URI.open('https://res.cloudinary.com/dza6mn30y/image/upload/v1644368310/eggcellent_hugip3.jpg')
+file1 = URI.open('https://res.cloudinary.com/dza6mn30y/image/upload/v1644368310/eggcellent_hugip3.jpg')
 file2 = URI.open('https://res.cloudinary.com/dza6mn30y/image/upload/v1644368312/funny-cat_lcf7bz.jpg')
 file3 = URI.open('https://res.cloudinary.com/dza6mn30y/image/upload/v1644368309/boris-meme_cj2b9h.jpg')
 file4 = URI.open('https://res.cloudinary.com/dza6mn30y/image/upload/v1644368305/dj_vakvb8.jpg')
@@ -31,7 +31,7 @@ User.create!(name:"Zak", email:"zak@pushflo.com", password:"1234567")
 puts "created user"
 
 eggmeme=MemeCreatorListing.new(creator_name:"Eggmeister", speciality:"Egg Meme Specialist", user_id:1)
-eggmeme.photo.attach(io: file, filename: "egg.png", content_type: 'image/jpg')
+eggmeme.photo.attach(io: file1, filename: "egg.png", content_type: 'image/jpg')
 eggmeme.save!
 
 catmeme=MemeCreatorListing.new(creator_name:"Meeyaaaw", speciality:"Cat Meme Specialist", user_id:2)

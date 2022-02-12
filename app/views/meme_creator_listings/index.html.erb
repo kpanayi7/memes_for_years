@@ -10,125 +10,31 @@
 								These guys know how to create pointless memes that go viral &#x1f680;
 					</p>
 				</div>
+
+
 			</div>
 			<div class="row" data-aos="fade-down" data-aos-delay="250">
+       <% @meme_creator_listings.each do |creator|%>
 				<div class="mb-6 col-lg-4 col-md-6">
 					<a href="#" class="d-block rounded-0 h-75 mb-4">
-						<img src="https://res.cloudinary.com/dza6mn30y/image/upload/v1644368310/eggcellent_hugip3.jpg" alt="" class="mb-4 rounded-2 shadow d-xxl-flex w-100 h-100 position-relative img-fluid" srcset="images/eggcellent.jpg 2x">
+						<%= cl_image_tag creator.photo.key,  class: "mb-4 rounded-2 shadow d-xxl-flex w-100 h-100 position-relative img-fluid" %>
 					</a>
-					<a href="#" class="btn float-xxl-end btn-outline-dark-2 btn-sm pt-2 mt-3">
-								Book
+					 <%= link_to "View More", meme_creator_listing_path(creator), class:"btn float-xxl-end btn-outline-dark-2 btn-sm pt-2 mt-3" %>
+
 					</a>
 					<div class="row justify-content-between">
 						<div class="col">
 						</div>
 					</div>
 					<h5>
-								Eggmeister
+						<%= creator.creator_name %>
 					</h5>
 					<h6 class="fw-1">
-								Egg Meme Specialist
+							<%= creator.speciality %>
 					</h6>
 				</div>
-				<div class="mb-6 col-lg-4 col-md-6">
-					<a href="#" class="d-block h-75 mb-5">
-						<img src="https://res.cloudinary.com/dza6mn30y/image/upload/v1644368312/funny-cat_lcf7bz.jpg" alt="" class="w-100 mb-4 w-100 rounded-2 shadow d-xxl-inline position-relative pt-1 h-100">
-					</a>
-					<a href="#" class="btn float-xxl-end btn-outline-dark-2 btn-sm mt-2">
-								Book
-					</a>
-					<div class="row justify-content-between">
-						<div class="col">
-						</div>
-					</div>
-					<h5>
-								Meeyaaaw
-					</h5>
-					<h6 class="fw-1">
-								Cat Meme Specialist
-					</h6>
-				</div>
-				<div class="mb-6 col-lg-4 col-md-6">
-					<a href="#" class="d-block mh-100 mw-100 h-75 mb-5">
-						<img src="https://res.cloudinary.com/dza6mn30y/image/upload/v1644368309/boris-meme_cj2b9h.jpg" alt="" class="w-100 mb-4 w-100 rounded-2 shadow h-100">
-					</a>
-					<a href="#" class="btn float-xxl-end btn-outline-dark-2 btn-sm">
-								Book
-					</a>
-					<div class="row justify-content-between">
-						<div class="col">
-						</div>
-						<div class="col-auto">
-						</div>
-					</div>
-					<h5>
-					</h5>
-					<h5>
-										Bozza
-					</h5>
-					<h6 class="fw-1">
-										Boris Johnson Meme Specialist
-					</h6>
-				</div>
-				<div class="mb-6 col-lg-4 col-md-6 mb-lg-0">
-					<a href="#" class="d-block h-auto mb-6">
-						<img src="https://res.cloudinary.com/dza6mn30y/image/upload/v1644368305/dj_vakvb8.jpg" alt="" class="w-100 w-100 rounded-2 shadow h-100 pb-2 pt-2">
-					</a>
-					<a href="#" class="btn float-xxl-end btn-outline-dark-2 btn-sm">
-								Book
-					</a>
-					<div class="row justify-content-between">
-						<div class="col">
-						</div>
-						<div class="col-auto">
-						</div>
-					</div>
-					<h5>
-								Deejay
-					</h5>
-					<h6 class="fw-1">
-								DJ Meme Specialist
-					</h6>
-				</div>
-				<div class="mb-6 col-lg-4 col-md-6 mb-md-0">
-					<a href="#" class="d-block mb-5">
-						<img src="https://res.cloudinary.com/dza6mn30y/image/upload/v1644368303/dog-meme_w0qflb.png" alt="" class="mb-4 rounded-2 shadow h-100 w-100">
-					</a>
-					<a href="#" class="btn float-xxl-end btn-outline-dark-2 btn-sm">
-								Book
-					</a>
-					<div class="row justify-content-between">
-						<div class="col">
-						</div>
-						<div class="col-auto">
-						</div>
-					</div>
-					<h5>
-								Hugh Let the Dogs  Out
-					</h5>
-					<h6 class="fw-1">
-								Dog Meme Specialist
-					</h6>
-				</div>
-				<div class="mb-6 col-lg-4 col-md-6 mb-md-0">
-					<a href="#" class="d-block">
-						<img src="https://res.cloudinary.com/dza6mn30y/image/upload/v1644368306/coding-1644357083_avsizn.png" alt="" class="w-100 mb-4 w-100 shadow rounded-2 h-75">
-					</a>
-					<a href="#" class="btn float-xxl-end btn-outline-dark-2 btn-sm">
-								Book
-					</a>
-					<div class="row justify-content-between">
-						<div class="col">
-						</div>
-						<div class="col-auto">
-						</div>
-					</div>
-					<h5>
-								Query Selecta Ta Ta
-					</h5>
-					<h6 class="fw-1">
-								Coding Meme Specialist
-					</h6>
+<% end %>
+
 				</div>
 			</div>
 		</div>

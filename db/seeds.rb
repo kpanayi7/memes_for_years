@@ -1,11 +1,11 @@
 require "open-uri"
 
-file1 = URI.open('https://res.cloudinary.com/dza6mn30y/image/upload/v1644368310/eggcellent_hugip3.jpg')
-file2 = URI.open('https://res.cloudinary.com/dza6mn30y/image/upload/v1644368312/funny-cat_lcf7bz.jpg')
-file3 = URI.open('https://res.cloudinary.com/dza6mn30y/image/upload/v1644368309/boris-meme_cj2b9h.jpg')
-file4 = URI.open('https://res.cloudinary.com/dza6mn30y/image/upload/v1644368305/dj_vakvb8.jpg')
-file5 = URI.open('https://res.cloudinary.com/dza6mn30y/image/upload/v1644368303/dog-meme_w0qflb.png')
-file6 = URI.open('https://res.cloudinary.com/dza6mn30y/image/upload/v1644368306/coding-1644357083_avsizn.png')
+file1 = URI.open('https://res.cloudinary.com/dza6mn30y/image/upload/v1644368310/memes/eggcellent_hugip3.jpg')
+file2 = URI.open('https://res.cloudinary.com/dza6mn30y/image/upload/v1644368312/memes/funny-cat_lcf7bz.jpg')
+file3 = URI.open('https://res.cloudinary.com/dza6mn30y/image/upload/v1644368309/memes/boris-meme_cj2b9h.jpg')
+file4 = URI.open('https://res.cloudinary.com/dza6mn30y/image/upload/v1644368305/memes/dj_vakvb8.jpg')
+file5 = URI.open('https://res.cloudinary.com/dza6mn30y/image/upload/v1644368303/memes/dog-meme_w0qflb.png')
+file6 = URI.open('https://res.cloudinary.com/dza6mn30y/image/upload/v1644368306/memes/coding-1644357083_avsizn.png')
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #

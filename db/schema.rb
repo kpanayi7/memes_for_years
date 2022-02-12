@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 2022_02_05_123527) do
     t.string "creator_name"
     t.string "speciality"
     t.string "description"
+    t.string "photo"
     t.integer "hourly_price"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false

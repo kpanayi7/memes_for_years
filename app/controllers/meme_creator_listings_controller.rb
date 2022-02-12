@@ -18,7 +18,9 @@ class MemeCreatorListingsController < ApplicationController
 
   def show
     @meme_creator_listing = MemeCreatorListing.find(params[:id])
+    @booking = Booking.new
   end
+
 
   private
 

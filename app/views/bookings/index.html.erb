@@ -11,41 +11,22 @@
 	</header>
 	<!-- Team 2 -->
 		<section class="py-10 py-lg-20 text-center">
+
+      <% @bookings.each do |booking|%>
 			<div class="container">
 				<div class="row justify-content-center">
 					<div class="col-sm-6 col-md-5 col-lg-3 mb-6 mb-lg-0" data-aos="fade-down" data-aos-delay="400">
 						<div class="border rounded-2 border-dark-3 p-6 h-100 shadow">
-							<img src="https://res.cloudinary.com/dza6mn30y/image/upload/v1644368310/eggcellent_hugip3.jpg"  srcset="i/team-2-2@2x.jpg 2x" alt="" class="img-fluid mb-6 rounded-1">
+							<% cl_image_tag booking.meme_creator_listing.photo.key, class:"img-fluid mb-6 rounded-1" %>
 							<h5 class="mb-2">
-    Ronald Richards
+    	          <%= booking.meme_creator_listing.creator_name %>
 							</h5>
 							<p class="mb-4">
-								Meme specialist
+								<%= booking.meme_creator_listing.speciality %>
 							</p>
 						</div>
 					</div>
-					<div class="col-sm-6 col-md-5 col-lg-3 mb-6 mb-sm-0" data-aos="fade-down" data-aos-delay="500">
-						<div class="border rounded-2 border-dark-3 p-6 h-100 shadow">
-							<img src= "https://res.cloudinary.com/dza6mn30y/image/upload/v1644368310/eggcellent_hugip3.jpg" srcset="i/team-2-3@2x.jpg 2x" alt="" class="img-fluid mb-6 rounded-1">
-							<h5 class="mb-2">
-    Floyd Miles
-							</h5>
-							<p class="mb-4">
-								Meme specialist
-							</p>
-						</div>
-					</div>
-					<div class="col-sm-6 col-md-5 col-lg-3" data-aos="fade-down" data-aos-delay="650">
-						<div class="border rounded-2 border-dark-3 p-6 h-100 shadow">
-							<img src= "https://res.cloudinary.com/dza6mn30y/image/upload/v1644368310/eggcellent_hugip3.jpg" srcset="i/team-2-4@2x.jpg 2x" alt="" class="img-fluid mb-6 rounded-1">
-							<h5 class="mb-2">
-    Guy Hawkins
-							</h5>
-							<p class="mb-4">
-								Meme specialist
-							</p>
-						</div>
-					</div>
+         <%end%>
 				</div>
 			</div>
 		</section>

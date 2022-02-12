@@ -4,6 +4,7 @@ class CreateMemeCreatorListings < ActiveRecord::Migration[6.1]
       t.string :creator_name
       t.string :speciality
       t.string :description
+      t.string :photo
       t.integer :hourly_price
       t.references :user
 

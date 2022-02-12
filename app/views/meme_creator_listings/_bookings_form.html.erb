@@ -1,0 +1,11 @@
+<div class="container center_div" style="width: 500px">
+  <%= simple_form_for [ @meme_creator_listing, @booking ] do |f| %>
+    <div class="p-3">
+      <%# <%= f.label :date_booked, "Booking Date:" %>
+      <%# # <%= f.date_field :date_booked, as: :date, value: f.object.try(:strftime,"%d/%m/%Y"), class: 'form-control' %>
+    </div>
+       <div class="p-3">
+      <%= f.submit "Book this Meme Creator!", class: "btn btn-primary" %>
+    </div>
+<% end %>
+</div>

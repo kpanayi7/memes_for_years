@@ -17,13 +17,13 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(booking_params)
-    @booking.meme_creator_listing = MemeCreatorListing.find(params[meme_creator_listing_id])
+    @booking = Booking.new(booking_params.merge(user_id: current_user.id))
+    @booking.meme_creator_listing = MemeCreatorListing.find(params[:meme_creator_listing_id])
     @booking.user = current_user
     if @booking.save
-      redirect_to booking_path(@booking), notice: "Booking Successful"
+      redirect_to bookings_path, notice: "Booking Successful"
     else
-      render :new
+      render meme_creator_listings/show
     end
   end
 

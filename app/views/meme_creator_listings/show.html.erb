@@ -3,17 +3,17 @@
 			<div class="justify-content-center row">
 				<div class="col-md-9 col-lg-7 col-xl-6 col-xxl-5">
 					<h2 class="display-5 mb-0 float-xxl-none" data-aos="fade-down" data-aos-delay="0">
-								NAME
+							<%= @meme_creator_listing.creator_name %>
 					</h2>
 					<p class="mb-15 fs-2 py-0" data-aos="fade-down" data-aos-delay="150">
-								SPECIALITY
+							<%= @meme_creator_listing.speciality %>
 					</p>
 				</div>
 			</div>
 			<div class="row">
 				<div class="mb-3 mb-sm-6 col-lg-6 container-xl" data-aos="fade-down" data-aos-delay="400">
 					<a href="#" class="d-block rounded-1">
-						<img src= "https://res.cloudinary.com/dza6mn30y/image/upload/v1644368310/eggcellent_hugip3.jpg"  alt="" class="w-100 rounded-1 shadow">
+						<%= cl_image_tag @meme_creator_listing.photo.key, class: "w-100 rounded-1 shadow" %>
 					</a>
 				</div>
 			</div>
@@ -26,11 +26,11 @@
 			</div>
 			<div class="row">
 				<div class="mb-3 mb-sm-6 col-lg-6 container-xl position-relative" data-aos="fade-down" data-aos-delay="400">
-					<a href="#" class="d-block">
-					</a>
-					<a href="#" class="btn w-25 rounded-1 float-xxl-start btn-outline-bg-1">
-								Book Now
-					</a>
+
+
+          <%= render "bookings_form" %>
+
+
 				</div>
 			</div>
 		</div>

@@ -5,9 +5,16 @@ class MemeCreatorListingsController < ApplicationController
     @meme_creator_listings = MemeCreatorListing.all
   end
 
+  def new
+    @meme_creator_listing = MemeCreatorListing.new
+
+  end
+
   def create
     @meme_creator_listing = MemeCreatorListing.new(meme_creator_listing_params)
   end
+
+
 
   def show
     @meme_creator_listing = MemeCreatorListing.find(params[:id])

@@ -1,12 +1,51 @@
-<h1 class="text-center">My Bookings!</h1>
 
-<div class="text-center">
-    <% @bookings.each do |booking| %>
-            <div>
-            <h2><%= link_to booking.meme_creator_listing.creator_name, meme_creator_listing_booking_path(booking.meme_creator_listing, booking) %></h2>
-        <p>Date: <%= booking.date_booked.strftime('%d-%m-%Y')%></p>
-
-      <br><br>
-    <% end %>
-</div>
-</div>
+	<header class="py-20 bg-bg-3 text-center">
+		<div class="container">
+			<h2 class="display-3 mb-4 mb-xl-6" data-aos="fade-down" data-aos-delay="0">
+				Your Bookings
+			</h2>
+			<p class="fs-1 mb-6 mb-md-8 remove-br" data-aos="fade-down" data-aos-delay="250">
+				These creators are booked to make some meme &#x1f525; for you
+			</p>
+		</div>
+	</header>
+	<!-- Team 2 -->
+		<section class="py-10 py-lg-20 text-center">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-sm-6 col-md-5 col-lg-3 mb-6 mb-lg-0" data-aos="fade-down" data-aos-delay="400">
+						<div class="border rounded-2 border-dark-3 p-6 h-100 shadow">
+							<img src="https://res.cloudinary.com/dza6mn30y/image/upload/v1644368310/eggcellent_hugip3.jpg"  srcset="i/team-2-2@2x.jpg 2x" alt="" class="img-fluid mb-6 rounded-1">
+							<h5 class="mb-2">
+    Ronald Richards
+							</h5>
+							<p class="mb-4">
+								Meme specialist
+							</p>
+						</div>
+					</div>
+					<div class="col-sm-6 col-md-5 col-lg-3 mb-6 mb-sm-0" data-aos="fade-down" data-aos-delay="500">
+						<div class="border rounded-2 border-dark-3 p-6 h-100 shadow">
+							<img src= "https://res.cloudinary.com/dza6mn30y/image/upload/v1644368310/eggcellent_hugip3.jpg" srcset="i/team-2-3@2x.jpg 2x" alt="" class="img-fluid mb-6 rounded-1">
+							<h5 class="mb-2">
+    Floyd Miles
+							</h5>
+							<p class="mb-4">
+								Meme specialist
+							</p>
+						</div>
+					</div>
+					<div class="col-sm-6 col-md-5 col-lg-3" data-aos="fade-down" data-aos-delay="650">
+						<div class="border rounded-2 border-dark-3 p-6 h-100 shadow">
+							<img src= "https://res.cloudinary.com/dza6mn30y/image/upload/v1644368310/eggcellent_hugip3.jpg" srcset="i/team-2-4@2x.jpg 2x" alt="" class="img-fluid mb-6 rounded-1">
+							<h5 class="mb-2">
+    Guy Hawkins
+							</h5>
+							<p class="mb-4">
+								Meme specialist
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>

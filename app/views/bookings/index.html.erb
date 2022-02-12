@@ -1,31 +1,51 @@
-<header class="py-20 bg-bg-3 text-center">
+<header class=" bg-bg-3 text-center">
 		<div class="container">
 			<h2 class="display-3 mb-4 mb-xl-6" data-aos="fade-down" data-aos-delay="0">
 				Your Bookings
 			</h2>
-			<p class="fs-1 mb-6 mb-md-8 remove-br" data-aos="fade-down" data-aos-delay="250">
+			<p class="fs-1 remove-br" data-aos="fade-down" >
 				These creators are booked to make some meme &#x1f525; for you
 			</p>
 		</div>
 	</header>
 	<!-- Team 2 -->
-		<section class="py-10 py-lg-20 text-center">
+		<section class=" text-center">
 
-      <% @bookings.each do |booking|%>
-			<div class="container">
+      <%# <% @bookings.each do |booking|%>
+			<%# <div class="container">
 				<div class="row justify-content-center">
 					<div class="col-sm-6 col-md-5 col-lg-3 mb-6 mb-lg-0" data-aos="fade-down" data-aos-delay="400">
 						<div class="border rounded-2 border-dark-3 p-6 h-100 shadow">
 							<% cl_image_tag booking.meme_creator_listing.photo.key, class:"img-fluid mb-6 rounded-1" %>
-							<h5 class="mb-2">
-    	          <%= booking.meme_creator_listing.creator_name %>
-							</h5>
+							<%# <h5 class="mb-2">
+    	          <%# <%= booking.meme_creator_listing.creator_name %>
+							<%# </h5>
 							<p class="mb-4">
 								<%= booking.meme_creator_listing.speciality %>
+							<%# </p>
+						</div> %>
+					<%# </div>
+         <%end %>
+
+<section class=" text-center">
+			<div class="container">
+				<div class="py-10 row justify-content-center">
+					<div class="py-5 col-sm-6 col-md-5 col-lg-3 mb-6 " data-aos="fade-down" >
+						<div class="border rounded-2 border-dark-3 p-6 h-100 shadow">
+							<img src='https://res.cloudinary.com/dza6mn30y/image/upload/v1644368310/memes/eggcellent_hugip3.jpg' srcset="i/team-2-2@2x.jpg 2x" alt="" class="img-fluid rounded-1">
+							<h5 class="mb-2">
+  Eggmeister
+							</h5>
+							<p class="mb-4">
+								Egg Meme specialist
 							</p>
 						</div>
 					</div>
-         <%end%>
+
+<br><br>
+<br><br>
+<br><br>
+<br><br>
 				</div>
 			</div>
 		</section>

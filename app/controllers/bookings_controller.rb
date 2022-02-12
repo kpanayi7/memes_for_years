@@ -17,7 +17,7 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(booking_params.merge(user_id: current_user.id))
+    @booking = Booking.new(booking_params)
     @booking.meme_creator_listing = MemeCreatorListing.find(params[:meme_creator_listing_id])
     @booking.user = current_user
     if @booking.save
@@ -34,7 +34,7 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:date_booked)
+    params.require(:booking).permit(:meme_creator_listing_id)
   end
 
 end

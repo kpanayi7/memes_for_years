@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   # get '/my_meme_creator_listings', to: 'meme_creator_listings#index'
   # get '/my_bookings', to: 'bookings#index'
   resources :meme_creator_listings, only: [:index, :show, :create] do
-   resources :booking, only: [:new, :create]
+  resources :booking, only: [:new, :create]
   end
   resources :bookings, only: [:index, :show]
 end
